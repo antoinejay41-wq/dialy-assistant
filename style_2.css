@@ -1,0 +1,341 @@
+/* ------------------------------------------------------------------ */
+/*  Theme variables                                                     */
+/* ------------------------------------------------------------------ */
+
+.login-shell[data-theme="dark"] {
+  --bg: #161616;
+  --card-bg: #1c1c1c;
+  --text: #f2f2f0;
+  --text-sub: #8f8f8c;
+  --field-bg: #242424;
+  --field-border: #333333;
+}
+
+.login-shell[data-theme="light"] {
+  --bg: #f4f3ef;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --text-sub: #6b6b68;
+  --field-bg: #ffffff;
+  --field-border: #dcdbd6;
+}
+
+:root {
+  --brand-violet: #8b5cf6;
+  --brand-indigo: #4c1d95;
+  --brand-gradient: linear-gradient(135deg, #8b5cf6 0%, #4c1d95 100%);
+  --danger: #e05a5a;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Layout                                                              */
+/* ------------------------------------------------------------------ */
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.login-shell {
+  background: var(--bg);
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Theme toggle                                                       */
+/* ------------------------------------------------------------------ */
+
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Gradient header                                                     */
+/* ------------------------------------------------------------------ */
+
+.gradient-header {
+  background: var(--brand-gradient);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: height 0.25s ease;
+}
+
+.gradient-header.stage-splash {
+  height: 100%;
+  justify-content: space-between;
+  padding: 70px 28px 40px;
+}
+
+.gradient-header.stage-auth {
+  height: 30%;
+  justify-content: center;
+  padding: 0;
+}
+
+.accent-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+}
+
+.splash-logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  z-index: 1;
+}
+
+.splash-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.splash-cta {
+  width: 100%;
+  z-index: 1;
+}
+
+.get-started-btn {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  color: var(--brand-indigo);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.already-account {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12.5px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.auth-logo {
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Auth card                                                           */
+/* ------------------------------------------------------------------ */
+
+.auth-card {
+  position: absolute;
+  top: 26%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-bg);
+  border-radius: 26px 26px 0 0;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.card-heading {
+  text-align: center;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--brand-violet);
+  margin-bottom: 18px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--field-bg);
+  border: 1px solid var(--field-border);
+  border-radius: 24px;
+  padding: 12px 16px;
+}
+
+.field-row + .field-row {
+  margin-top: 12px;
+}
+
+.field-icon {
+  color: #9a9a97;
+  flex-shrink: 0;
+}
+
+.field-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.field-trailing-btn {
+  background: none;
+  border: none;
+  color: var(--text-sub);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.terms-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-sub);
+  cursor: pointer;
+}
+
+.terms-row b {
+  color: var(--text);
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 30px;
+  border: none;
+  background: var(--brand-gradient);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  color: var(--text-sub);
+  font-size: 11px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--field-border);
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.social-dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.social-note {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-sub);
+}
+
+.social-note b {
+  color: var(--text);
+}
+
+.switch-mode-row {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--text-sub);
+}
+
+.switch-mode-link {
+  color: var(--brand-violet);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-btn {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: none;
+  border: none;
+  color: var(--text-sub);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Logo mark                                                           */
+/* ------------------------------------------------------------------ */
+
+.logo-mark {
+  position: relative;
+}
+
+.logo-bar {
+  position: absolute;
+  left: 0;
+  background: linear-gradient(180deg, #f4f4f6, #c9cad0);
+}
+
+.logo-bar.top {
+  top: 0;
+}
+
+.logo-bar.bottom {
+  bottom: 0;
+}
+
+.logo-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #d8d9dd);
+}
